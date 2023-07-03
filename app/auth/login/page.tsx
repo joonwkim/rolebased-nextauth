@@ -2,8 +2,6 @@
 import type { Metadata } from 'next'
 import Link from "next/link"
 import { useState, } from 'react'
-import { Form, FloatingLabel, Stack } from 'react-bootstrap'
-import FormContainer from '../../components/formContainer';
 import { useRouter } from 'next/navigation';
 import { object, string, ZodType } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,24 +32,12 @@ export default function LoginPage(req: NextRequest) {
 
   const { register, formState: { errors }, handleSubmit, reset } = useForm<SessionForm>({ resolver: zodResolver(sessionSchema), });
 
-  const router = useRouter();
-  const [loginError, setLoginError] = useState<string[]>()
   const googleLogin = () => {
     signIn('google', { callbackUrl })
   }
 
   async function onSubmit(values: SessionForm): Promise<void> {
     try {
-      // var result = await loginAction(values)
-      // if(result ==='user not registered')
-      // {
-      //   alert('회원 가입하시거나 SNS계정으로 로그인 하세요.')
-      //   return
-      // }
-      // if(result ==="password do not match"){
-      //   alert('비밀번호가 일치하지 않습니다.')
-      //   return
-      // }
 
       await signIn("credentials", { callbackUrl, redirect: true, email: values.email, password: values.password })
 
