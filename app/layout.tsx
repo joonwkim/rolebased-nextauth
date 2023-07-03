@@ -8,11 +8,6 @@ import Providers from './components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'AmiAiLab',
-  description: 'AmiAiLab',
-}
-
 export default function RootLayout({
   children,
 }: {
