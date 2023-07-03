@@ -7,6 +7,7 @@
   min-height: 100vh;
 }
 
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -24,6 +25,7 @@
   align-items: center;
   gap: 0.5rem;
 }
+
 
 .description p {
   position: relative;
@@ -184,7 +186,6 @@
       rgba(var(--callout-rgb), 0.5)
     );
     background-clip: padding-box;
-    backdrop-filter: blur(24px);
   }
 
   .description div {
