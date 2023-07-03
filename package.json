@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prisma:generate:library": "PRISMA_CLIENT_ENGINE_TYPE='library' prisma generate",
+    "prisma:generate:dataproxy": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "db:push": "prisma db push",
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "prisma:generate": "prisma generate"
