@@ -8,12 +8,10 @@ import { useRouter } from 'next/navigation';
 import { object, string, ZodType } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import styles from '@/app/auth/page.module.css'
 import { NextRequest } from 'next/server'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 import { SessionForm } from '../types'
-import { loginAction } from '@/app/actions/userAction'
 
 
 export const metadata: Metadata = {
@@ -44,16 +42,16 @@ export default function LoginPage(req: NextRequest) {
 
   async function onSubmit(values: SessionForm): Promise<void> {
     try {
-      var result = await loginAction(values)
-      if(result ==='user not registered')
-      {
-        alert('회원 가입하시거나 SNS계정으로 로그인 하세요.')
-        return
-      }
-      if(result ==="password do not match"){
-        alert('비밀번호가 일치하지 않습니다.')
-        return
-      }
+      // var result = await loginAction(values)
+      // if(result ==='user not registered')
+      // {
+      //   alert('회원 가입하시거나 SNS계정으로 로그인 하세요.')
+      //   return
+      // }
+      // if(result ==="password do not match"){
+      //   alert('비밀번호가 일치하지 않습니다.')
+      //   return
+      // }
 
       await signIn("credentials", { callbackUrl, redirect: true, email: values.email, password: values.password })
 
