@@ -9,13 +9,11 @@ import { object, string, ZodType } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import styles from '@/app/auth/page.module.css'
-// import getGoogleUrl from '../../utils/getGoogleUrl'
 import { NextRequest } from 'next/server'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 import { SessionForm } from '../types'
 import { loginAction } from '@/app/actions/userAction'
-import { JsonWebTokenError } from 'jsonwebtoken'
 
 
 export const metadata: Metadata = {
