@@ -58,7 +58,6 @@ const Header = () => {
           ) : (
             <Nav className="ms-auto">
               <Nav.Link href="/auth/login" onClick={(e)=>onClick(e)}><FaSignInAlt />Login</Nav.Link>
-              <Nav.Link href="/auth/register"> <FaUser />Register</Nav.Link>
             </Nav>
           )
           }

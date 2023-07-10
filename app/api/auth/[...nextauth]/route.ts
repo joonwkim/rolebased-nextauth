@@ -5,10 +5,6 @@ import { findUpdateGoogleUser, getUserByEmail } from "@/services/userService"
 import { GoogleUser } from "@/app/auth/types"
 import { loginAction } from "@/app/actions/userAction"
 
-export const config = {
-  runtime: 'edge',
-};
-
 export const authOptions: NextAuthOptions = {
 
   providers: [
