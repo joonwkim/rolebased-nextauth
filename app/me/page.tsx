@@ -7,12 +7,12 @@ const MePage = () => {
   if(data ==null){
     return (
     
-      <pre>로그인 해야 프로파일을 볼 수 있습니다.</pre>
+      <h5>로그인 해야 프로파일을 볼 수 있습니다.</h5>
     )
   }
   return (
     
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <h2>{JSON.stringify(data, null, 2)}</h2>
   )
 }
 
