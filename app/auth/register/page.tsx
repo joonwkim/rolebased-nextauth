@@ -20,9 +20,6 @@ import FormContainer from "@/app/components/formContainer";
 // import { isDuplicatedError } from '@/globalRedux/services/helpers';
 // import useAuth from '@/globalRedux/hooks/useAuth'
 
-export const metadata: Metadata = {
-    title: 'Register',
-}
 
 const registerSchema: ZodType<RegisterForm> = object({
     name: string({ required_error: "이름을 입력하세요", }).min(3, "이름을 3글자 이상으로 입력하세요."),

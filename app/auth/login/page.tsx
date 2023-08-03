@@ -18,10 +18,6 @@ import { SessionForm } from '../types'
 import { loginAction } from '@/app/actions/userAction'
 import FormContainer from '@/app/components/formContainer'
 
-
-export const metadata: Metadata = {
-  title: 'Login',
-}
 const sessionSchema: ZodType<SessionForm> = object({
   email: string({
     required_error: "이메일 주소를 입력하세요.",
